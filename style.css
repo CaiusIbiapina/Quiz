@@ -27,10 +27,16 @@ body {
 .cabecalho > h1 {
     color: aliceblue;
     font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
 }
 
 .principal {
-    background-color: yellow;
+    width: 1440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .criar {
@@ -41,6 +47,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
+    border-style: dashed;
+    border-color: rgb(172, 172, 172);
+    border-width: 1px;
+    border-radius: 10px;
 }
 
 .criar > h1 {
@@ -65,4 +76,30 @@ body {
     background-color: #FAFAFA;
     border-color: #EC362D;
     color: #EC362D;
+}
+
+.quizzes {
+    /*background-color: orange;*/
+    width: 1051px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.todos {
+    width: 158px;
+    height: 23px;
+    font-weight: 700;
+    size: 20px;
+    margin-top: 60px;
+    margin-right: 890px;
+}
+
+.banner {
+    width: 340px;
+    height: 181px;
+    margin: 5px 0px;
+    border-radius: 10px;
 }
