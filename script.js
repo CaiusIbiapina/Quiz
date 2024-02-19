@@ -8,46 +8,48 @@ function inicializando() {
   promessa.then(carregarTodosQuizzes);
 }
 
-function quiz1() {
-    const promessa = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/1');
-    promessa.then(exibirQuizz);
-    promessa.catch(console.log('Deu erro'));
-
-    for (i = 0; i < resposta.lenght; i++) {
-        const quizz = document.querySelector('.quiz1');
-        `
-        <img src=''>
-        <h1>O quão Potterhead é você?</h1>
-
-        <div class="pergunta1">
-            <h1 class='titulo-pergunta'>Em qual animal Olho-tonto transfigurou Malfoy?</h1>
-
-            <div class='alternativas'>
-                <div class='a'>
-                    <img class='img1' src=''>
-                    <h1>Gatineo</h1>
-                </div>
-                <div class='b'>
-                    <img class='img1' src=''>
-                    <h1>Ratata</h1>
-                </div>
-                <div class='c'>
-                    <img class='img1' src=''>
-                    <h1>Sapo Gordo</h1>
-                </div>
-                <div class='d'>
-                    <img class='img1' src=''>
-                    <h1>Mustela</h1>
-                </div>
-            </div>
-            
-        </div>`
-    }
-    
+function irParaQuizz(id) {
+  const promessa = axios.get(
+    `https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${id}`
+  );
+  promessa.then(exibirQuizz);
+  promessa.catch(console.log("Deu erro"));
 }
 
 function exibirQuizz(resposta) {
-    console.log(resposta.data);
+  console.log(resposta.data);
+  const dados = resposta.data;
+
+  const quizz = document.querySelector(".principal");
+  console.log(dados.questions[0].answers);
+  quizz.innerHTML = 
+  `
+    <img src=${dados.image}>
+        <h1>${dados.title}</h1>
+
+        <div class="pergunta1">
+            <h1 class='titulo-pergunta'>${dados.questions[0].title}</h1>
+
+            <div class='alternativas'>
+                <div class='a'>
+                    <img class='img1' src='${dados.questions[0].answers[0].image}'>
+                    <h1>${dados.questions[0].answers[0].text}</h1>
+                </div>
+                <div class='b'>
+                    <img class='img1' src='${dados.questions[0].answers[1].image}'>
+                    <h1>${dados.questions[0].answers[1].text}</h1>
+                </div>
+                <div class='c'>
+                    <img class='img1' src='${dados.questions[0].answers[2].image}'>
+                    <h1>${dados.questions[0].answers[2].text}</h1>
+                </div>
+                <div class='d'>
+                    <img class='img1' src='${dados.questions[0].answers[3].image}'>
+                    <h1>${dados.questions[0].answers[3].text}</h1>
+                </div>
+            </div>
+            
+        </div>`;
 }
 
 function carregarTodosQuizzes(resposta) {
@@ -59,14 +61,10 @@ function carregarTodosQuizzes(resposta) {
     <li class="quizz">
       <img
       class="banner"
-      onclick="irParaQuizz()"
+      onclick="irParaQuizz(${dadosDoQuizz[i].id})"
       src="${dadosDoQuizz[i].image}"
       />
     </li>`;
   }
   //isLoading(false);
-}
-
-function irParaQuizz() {
-  alert("estou indo para o quizz!!");
 }
