@@ -22,11 +22,11 @@ function exibirQuizz(resposta) {
 
   const quizz = document.querySelector(".principal");
   console.log(dados.questions[0].answers);
-  quizz.innerHTML = 
-  `
-    <img src=${dados.image}>
-        <h1>${dados.title}</h1>
-
+  quizz.innerHTML = `
+  <div class= "containerTelaQuizz">
+    <img src=${dados.image} class="imagemCapaTelaQuizz">
+        <h1 class="tituloCapaTelaQuizz">${dados.title}</h1>
+        </div>
         <div class="pergunta1">
             <h1 class='titulo-pergunta'>${dados.questions[0].title}</h1>
 
