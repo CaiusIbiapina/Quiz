@@ -86,7 +86,6 @@ body {
 }
 
 .quizzes {
-  /*background-color: orange;*/
   width: 1051px;
   height: 380px;
   display: flex;
@@ -144,4 +143,28 @@ body {
 
 .quizz:hover {
   transform: scale(1.04);
+}
+
+.pergunta1 {
+  width: 759px;
+  height: 676px;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo-pergunta {
+  width: 650px;
+  height: 150px;
+  background-color: orange;
+}
+
+.alternativas {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
