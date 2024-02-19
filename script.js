@@ -10,7 +10,7 @@ function inicializando() {
 
 function carregarTodosQuizzes(resposta) {
   const dadosDoQuizz = resposta.data;
-
+  console.log(dadosDoQuizz);
   for (let i = 0; i < 6; i++) {
     const todosQuizzes = document.querySelector(".quizzes");
     todosQuizzes.innerHTML += `
@@ -20,6 +20,7 @@ function carregarTodosQuizzes(resposta) {
       onclick="irParaQuizz()"
       src="${dadosDoQuizz[i].image}"
       />
+      <p>${dadosDoQuizz[i].title}</p>
     </li>`;
   }
   //isLoading(false);

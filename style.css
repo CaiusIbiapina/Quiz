@@ -34,7 +34,7 @@ body {
 
 .cabecalho > h1 {
   color: aliceblue;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 25px;
   font-weight: 500;
 }
@@ -101,8 +101,27 @@ body {
   border-radius: 5px;
   border: 2px solid black;
   transition: transform 0.3s ease-in-out;
+  position: relative;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.quizz > p {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
+  background-color: red;
+  width: 100%;
+}
 .todos {
   width: 158px;
   height: 23px;
@@ -119,10 +138,10 @@ body {
   transform: scale(1);
 }
 
-.banner:hover{
-    opacity: 0.8;
+.banner:hover {
+  opacity: 0.8;
 }
 
-.quizz:hover{
-    transform: scale(1.04);
+.quizz:hover {
+  transform: scale(1.04);
 }
