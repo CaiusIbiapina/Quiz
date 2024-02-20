@@ -24,32 +24,37 @@ function exibirQuizz(resposta) {
   console.log(dados.questions[0].answers);
   quizz.innerHTML = `
   <div class= "containerTelaQuizz">
-    <img src=${dados.image} class="imagemCapaTelaQuizz">
+    <img src=${dados.image} class="imagemCapaTelaQuizz"/>
         <h1 class="tituloCapaTelaQuizz">${dados.title}</h1>
-        </div>
-        <div class="pergunta1">
-            <h1 class='titulo-pergunta'>${dados.questions[0].title}</h1>
+        <div class="perguntas"></div>`;
+
+  for (let i = 0; i < dados.questions.length; i++) {
+    const perguntas = document.querySelector(".perguntas");
+    perguntas.innerHTML += `<div class="pergunta1">
+            <h1 class='titulo-pergunta'>${dados.questions[i].title}</h1>
 
             <div class='alternativas'>
                 <div class='a'>
-                    <img class='img1' src='${dados.questions[0].answers[0].image}'>
-                    <h1>${dados.questions[0].answers[0].text}</h1>
+                    <img class='img1' src='${dados.questions[0].answers[0].image}'/>
+                    <h1>${dados.questions[i].answers[0].text}</h1>
                 </div>
                 <div class='b'>
-                    <img class='img1' src='${dados.questions[0].answers[1].image}'>
-                    <h1>${dados.questions[0].answers[1].text}</h1>
+                    <img class='img1' src='${dados.questions[0].answers[1].image}'/>
+                    <h1>${dados.questions[i].answers[1].text}</h1>
                 </div>
                 <div class='c'>
-                    <img class='img1' src='${dados.questions[0].answers[2].image}'>
-                    <h1>${dados.questions[0].answers[2].text}</h1>
+                    <img class='img1' src='${dados.questions[0].answers[2].image}'/>
+                    <h1>${dados.questions[i].answers[2].text}</h1>
                 </div>
                 <div class='d'>
-                    <img class='img1' src='${dados.questions[0].answers[3].image}'>
-                    <h1>${dados.questions[0].answers[3].text}</h1>
+                    <img class='img1' src='${dados.questions[0].answers[3].image}'/>
+                    <h1>${dados.questions[i].answers[3].text}</h1>
                 </div>
             </div>
             
         </div>`;
+  }
+  quizz.innerHTML += `</div>`;
 }
 
 function carregarTodosQuizzes(resposta) {
